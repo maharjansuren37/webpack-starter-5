@@ -1,7 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const withReport = true;
+const withReport = false;
+
 module.exports = {
     mode: 'development',
     entry: {
@@ -50,7 +51,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Webpack App',
             filename: 'index.html',
-            template: 'src/template.html'
+            template: './public/index.html'
         }),
     ].concat(withReport ? [new BundleAnalyzerPlugin()] : []),
     // mode: process.env.NODE_ENV === "production" ? "production" : "development"
